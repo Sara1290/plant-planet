@@ -1,10 +1,11 @@
 require('dotenv').config();
-const massive = require(massive);
-const express = require(express);
-const session = require(express-session);
-const app = express();
+const massive = require('massive');
+const express = require('express');
+const session = require('express-session');
 const authCtrl = require("./authController");
-const recCtrl = require("./recipeController"); 
+// const recCtrl = require("./recipeController"); 
+
+const app = express();
 
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env;
 
@@ -27,19 +28,20 @@ app.get('/api/auth/me', authCtrl.getUser)
 app.post('/api/auth/logout', authCtrl.logout)
 
 //recipe endpoints
-app.get('/api/rec/get-all', recCtrl.getAllRecipes)
-app.get('/api/rec/get', recCtrl.getRecipe)
-app.post('/api/rec/create', recCtrl.createNewRecipe)
-app.put('/api/rec/edit', recCtrl.editRecipe)
-app.delete('/api/rec/delete', recCtrl.deleteRecipe)
-app.post('/api/rec/save', recCtrl.saveRecipe)
+// app.get('/api/rec/get-all', recCtrl.getAllRecipes)
+// app.get('/api/rec/get', recCtrl.getRecipe)
+// app.post('/api/rec/create', recCtrl.createNewRecipe)
+// app.put('/api/rec/edit', recCtrl.editRecipe)
+// app.delete('/api/rec/delete', recCtrl.deleteRecipe)
+// app.post('/api/rec/save', recCtrl.saveRecipe)
 
 massive ({
     connectionString : CONNECTION_STRING,
     ssl : {
         rejectUnauthorized: false,
     }
-}).then(db => {
+})
+.then(db => {
     app.set("db", db);
     app.listen(SERVER_PORT, () => console.log(`Db Up And Server Running On ${SERVER_PORT}`));
 })

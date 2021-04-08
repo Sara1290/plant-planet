@@ -3,10 +3,12 @@ const bcrypt = require('bcryptjs');
 module.exports = {
     register: async (req, res) => {
         const {username, email, password} = req.body;
+        console.log(req.body)
         const prof_pic = `https://robohash.org/${username}.png`
         const db = req.app.get('db');
 
         const result = await db.auth.get_user_by_username([username]);
+        // console.log(username)
         const existingUser = result[0];
         if(existingUser) {
             return res.status(400).send("Username Is Taken");
@@ -14,14 +16,15 @@ module.exports = {
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(password, salt);
         const registeredUser = await db.auth.register_user([username, email, hash, prof_pic]);
+        // console.log(registeredUser)this was an empty array because my register_user sql statement didn't return anything.
         const user = registeredUser[0];
-        
+        // console.log(user)
         req.session.user = {
             username: user.username,
             prof_pic: user.prof_pic, 
             id: user.id
         };
-        // console.log(req.session.user)
+        console.log(req.session.user)
         return res.status(200).send(req.session.user);
     },
     login: async(req, res) => {
