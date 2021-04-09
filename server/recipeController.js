@@ -12,13 +12,15 @@ module.exports = {
             .then(recipes => res.status(200).send(recipes))
         }
     },
+
     getRecipe: (req, res) => {
         req.app.get('db').recipe.get_recipe(req.params.id)
         .then(recipe => recipe[0] 
             ? res.status(200).send(recipe[0]) 
             : res.status(200).send({}))
-
+            
     },
+
     createRecipe: (req, res) => {
         const db = req.app.get('db')
         const { id } = req.session.user
@@ -32,14 +34,35 @@ module.exports = {
             return res.sendStatus(403)
         }
     },
-    editRecipe: (req, res) => {
 
+    editRecipe: (req, res) => {
+        const db = req.app.get('db')
+        const { recipe } = req.params
+        const { id } = req.session.user
+        const { servings, timeframe, title, ingredients, method, img } = req.body
+
+        if(id) {
+            return db.recipe.edit_recipe([servings, timeframe, id, title, ingredients, method, img, recipe])
+            .then(() => res.sendStatus(200))
+        } else {
+            return res.sendStatus(403)
+        }
     },
+
     deleteRecipe: (req, res) => {
         req.app.get('db').recipe.delete_recipe(req.params.id)
         .then(() => res.sendStatus(200))
     },
     saveRecipe: (req, res) => {
+        const db = req.app.get('db')
+        const { id } = req.session.user
+        const { recipe } = req.params
         
+        if(id) {
+            return db.recipe.save_recipe(recipe)
+            .then(recipe => res.status(200).send(recipe))
+        } else {
+            return res.sendStatus(404)
+        }
     }
 }
