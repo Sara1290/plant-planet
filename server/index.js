@@ -3,7 +3,7 @@ const massive = require('massive');
 const express = require('express');
 const session = require('express-session');
 const authCtrl = require("./authController");
-// const recCtrl = require("./recipeController"); 
+const recCtrl = require("./recipeController"); 
 
 const app = express();
 
@@ -28,12 +28,12 @@ app.get('/api/auth/me', authCtrl.getUser)
 app.post('/api/auth/logout', authCtrl.logout)
 
 //recipe endpoints
-// app.get('/api/rec/get-all', recCtrl.getAllRecipes)
-// app.get('/api/rec/get', recCtrl.getRecipe)
-// app.post('/api/rec/create', recCtrl.createNewRecipe)
-// app.put('/api/rec/edit', recCtrl.editRecipe)
-// app.delete('/api/rec/delete', recCtrl.deleteRecipe)
-// app.post('/api/rec/save', recCtrl.saveRecipe)
+app.get('/api/recipes', recCtrl.getAll)
+app.get('/api/recipe', recCtrl.getRecipe)
+app.post('/api/create', recCtrl.createRecipe)
+// app.put('/api/edit', recCtrl.editRecipe)
+app.delete('/api/delete', recCtrl.deleteRecipe)
+// app.post('/api/save', recCtrl.saveRecipe)
 
 massive ({
     connectionString : CONNECTION_STRING,
