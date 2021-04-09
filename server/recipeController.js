@@ -56,11 +56,12 @@ module.exports = {
 
     saveRecipe: async (req, res) => {
         const { id } = req.session.user
+        console.log(id)
         const { recipe } = req.params
         const db =  await req.app.get('db')
         
         if(id) {
-            return db.saved.save_recipe(id, recipe)
+            db.saved.save_recipe(id, recipe)
             .then(() => res.sendStatus(200))
         } else {
             return res.sendStatus(404)
@@ -68,11 +69,11 @@ module.exports = {
     },
 
     savedToUser: (req, res) => {
-        const { id } = req.session.user
+        const { id } = req.params
         const db = req.app.get('db')
 
         if(id) {
-            return db.saved.saved_to_user()
+            return db.saved.saved_to_user(id)
             .then(recipes => res.status(200).send(recipes))
         
         }

@@ -48,8 +48,8 @@ module.exports = {
         return res.send(req.session.user)
     },
     getUser: (req, res) => {
-        if (req.session.username) {
-            return res.status(200).send(req.session.username) 
+        if (req.session.user) {
+            return res.status(200).send(req.session.user) 
         } else {
             res.sendStatus(404)
         }
