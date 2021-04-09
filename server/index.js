@@ -33,7 +33,8 @@ app.get('/api/recipe/:id', recCtrl.getRecipe)
 app.post('/api/create', recCtrl.createRecipe)
 app.put('/api/edit/:recipe', recCtrl.editRecipe)
 app.delete('/api/delete/:id', recCtrl.deleteRecipe)
-app.get('/api/save/:id', recCtrl.saveRecipe)
+app.post('/api/save/:recipe', recCtrl.saveRecipe)
+app.get('/api/saved/:id', recCtrl.savedToUser)
 
 massive ({
     connectionString : CONNECTION_STRING,

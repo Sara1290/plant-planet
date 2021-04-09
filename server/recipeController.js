@@ -53,16 +53,28 @@ module.exports = {
         req.app.get('db').recipe.delete_recipe(req.params.id)
         .then(() => res.sendStatus(200))
     },
-    saveRecipe: (req, res) => {
-        const db = req.app.get('db')
+
+    saveRecipe: async (req, res) => {
         const { id } = req.session.user
         const { recipe } = req.params
+        const db =  await req.app.get('db')
         
         if(id) {
-            return db.recipe.save_recipe(recipe)
-            .then(recipe => res.status(200).send(recipe))
+            return db.saved.save_recipe(id, recipe)
+            .then(() => res.sendStatus(200))
         } else {
             return res.sendStatus(404)
+        }
+    },
+
+    savedToUser: (req, res) => {
+        const { id } = req.session.user
+        const db = req.app.get('db')
+
+        if(id) {
+            return db.saved.saved_to_user()
+            .then(recipes => res.status(200).send(recipes))
+        
         }
     }
 }
