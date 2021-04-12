@@ -1,0 +1,1 @@
+//user has logged in, they start seeing recipes and the nav bar

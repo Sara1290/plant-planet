@@ -42,7 +42,7 @@ export function getUser(user) {
 }
 
 //reducer function
-export default function reducer (state = initialState, action) {
+export default function reducer(state = initialState, action) {
     switch(action.type) {
         case REGISTER_USER:
             return {
@@ -62,7 +62,7 @@ export default function reducer (state = initialState, action) {
                 ...state,
                 user: action.payload
             }
-        
+        default: return state
     }
         
 }
