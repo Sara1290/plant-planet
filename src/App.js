@@ -1,11 +1,13 @@
-import Auth from './Components/Auth'
+import routes from './routes'
+import Nav from './Components/Nav'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Display Something ::smiley:: </h1>
-      <Auth />
+      {routes}
+      <Nav />
+      
     </div>
   );
 }
