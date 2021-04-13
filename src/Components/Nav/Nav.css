@@ -1,0 +1,40 @@
+.nav-bar {
+    width: 100px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(0deg, rgb(0, 128, 0), rgb(144, 238, 144), rgb(189, 247, 189));
+}
+
+.nav-img {
+    width: 75px;
+}
+
+.nav > div {
+    margin: 0 0 45px;
+}
+
+.nav-profile-container {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid black;
+
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
