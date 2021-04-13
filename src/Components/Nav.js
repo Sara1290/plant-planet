@@ -19,7 +19,7 @@ const Nav = () => {
         .then( res => {
             setLoggedIn(res.data.results)
         })
-    }, [logoutUser]
+    }, [logoutUser])
 
 }
 export default Nav;
