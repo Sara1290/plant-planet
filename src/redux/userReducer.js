@@ -6,10 +6,10 @@ const initialState = {
 
 
 //action types 
-const REGISTER_USER = 'REGISTER_USER'
-const LOGIN_USER = 'LOGIN_USER'
-const LOGOUT_USER = 'LOGOUT_USER'
-const GET_USER = 'GET_USER'
+const REGISTER_USER = "REGISTER_USER";
+const LOGIN_USER = "LOGIN_USER";
+const LOGOUT_USER = "LOGOUT_USER";
+const GET_USER = "GET_USER";
 
 
 //action creators //there is no axios request in these otherwise and if i do use an axios request i 
@@ -42,17 +42,20 @@ export function getUser(user) {
 }
 
 //reducer function
-export default function reducer(state = initialState, action) {
+export default function reducer (state = initialState, action) {
     switch(action.type) {
         case REGISTER_USER:
             return {
                 ...state,
-                user: action.payload
+                username: action.payload.username,
+                email: action.payload.email,
+                prof_pic: action.payload.prof_pic
             }
         case LOGIN_USER:
             return {
                 ...state,
-                user: action.payload
+                email: action.payload.email,
+
             }
         case LOGOUT_USER:
             return initialState;
@@ -60,7 +63,8 @@ export default function reducer(state = initialState, action) {
         case GET_USER:
             return {
                 ...state,
-                user: action.payload
+                username: action.payload.username,
+                prof_pic: action.payload.prof_pic
             }
         default: return state
     }

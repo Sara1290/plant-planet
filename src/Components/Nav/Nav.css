@@ -16,7 +16,7 @@
 }
 
 .nav-profile-container {
-    height: 70vh;
+    height: 55vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,5 +36,12 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
+}
+
+.nav-planet-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
 }
