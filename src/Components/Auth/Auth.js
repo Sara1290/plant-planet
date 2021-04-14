@@ -1,9 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useHistory } from "react-router";
 import { loginUser } from "../redux/userReducer";
 import { registerUser } from "../redux/userReducer";
+import './Auth.css'
 
 const Auth = (props) => {
   const [email, setEmail] = useState("");
@@ -67,7 +66,7 @@ const Auth = (props) => {
   );
 
   return (
-    <div>
+    <div className="auth">
       <header>Plant Planet</header>
       <button onClick={toggleRegisterView}>Register View</button>
       <button onClick={toggleLoginView}>Login View</button>
