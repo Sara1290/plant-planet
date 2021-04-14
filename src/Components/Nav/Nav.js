@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { getUser, logoutUser } from "../../redux/userReducer";
 import "./Nav.css";
+// import { useDispatch, useSelector } from "react-redux";
 
 //I need to actually render a left-aligned vertical nav bar DONE
 //I need to use the getUser function from the server to get the username and prof_pic for the logged in user.
@@ -10,38 +11,30 @@ import "./Nav.css";
 //I need to have icons that link to Add New Recipe (Form), Recipe Box, and Dash (logo, will be like home.)
 
 const Nav = (props) => {
-//   const [loggedIn, setLoggedIn] = useState(true);
+  //   const [loggedIn, setLoggedIn] = useState(true);
   const [prof_pic, setProf_pic] = useState("");
   const [username, setUsername] = useState("");
-
-
+//   const user = useSelector(state => state)
+//   const dispatch = useDispatch();
 
   useEffect(() => {
-    axios.get("/api/auth/me")
-    .then((res) => {
-      getUser(res.data)
-      console.log(res.data)
-    })
-  }, [username])
+    axios.get("/api/auth/me").then((res) => {
+        getUser(res.data);
+    });
+  }, [username]);
 
-
- const logout = () => {
-      axios.delete("/api/auth/logout")
-      .then(res => {
-
-      })
-      .catch(err => console.log(err))
-  }
-
+  const logout = () => {
+    axios.delete("/api/auth/logout")
+      .then((res) => {})
+      .catch((err) => console.log(err));
+  };
   return (
-    <div className="nav-bar">
+      <div className="nav-bar">
       <div className="nav-planet-icon">
         <Link to="/dash">
           <img
             className="nav-img"
-            src={
-              "https://cdn.hipwallpaper.com/i/79/69/lRjATv.png"
-            }
+            src={"https://cdn.hipwallpaper.com/i/79/69/lRjATv.png"}
             alt="dash"
           />
         </Link>
@@ -70,15 +63,15 @@ const Nav = (props) => {
             alt="add new recipe"
           />
         </Link>
-      <Link to="/" onClick={logout}>
-        <img
-          className="nav-img"
-          src={
-            "https://cdn1.iconfinder.com/data/icons/door-3/200/1333_door-512.png"
-          }
-          alt="logout"
-        />
-      </Link>
+        <Link to="/" onClick={logout}>
+          <img
+            className="nav-img"
+            src={
+              "https://cdn1.iconfinder.com/data/icons/door-3/200/1333_door-512.png"
+            }
+            alt="logout"
+          />
+        </Link>
       </div>
     </div>
   );

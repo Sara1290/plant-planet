@@ -22,6 +22,7 @@ export function registerUser(user) {
 }
 
 export function loginUser(user){
+    console.log(user)
     return {
         type: LOGIN_USER,
         payload: user
@@ -43,6 +44,7 @@ export function getUser(user) {
 
 //reducer function
 export default function reducer (state = initialState, action) {
+    console.log(action.type)
     switch(action.type) {
         case REGISTER_USER:
             return {
@@ -53,13 +55,12 @@ export default function reducer (state = initialState, action) {
             }
         case LOGIN_USER:
             return {
-                ...state,
-                email: action.payload.email,
-
+                // ...state
+                user: action.payload
+                // email: action.payload.email,
             }
         case LOGOUT_USER:
             return initialState;
-
         case GET_USER:
             return {
                 ...state,
