@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { loginUser } from "../redux/userReducer";
-import { registerUser } from "../redux/userReducer";
+import { loginUser, registerUser } from "../../redux/userReducer"
+
 import './Auth.css'
 
 const Auth = (props) => {
@@ -34,8 +34,8 @@ const Auth = (props) => {
     axios
       .post("/api/auth/login", { email, password })
       .then((res) => {
-        loginUser({email, password});
-        props.history.push("/dash")
+        loginUser({ email, password });
+        props.history.push("/dash");
       })
       .catch((err) => console.log(err));
   }
@@ -45,8 +45,7 @@ const Auth = (props) => {
       .post("/api/auth/register", { email, username, password })
       .then((res) => {
         registerUser({ email, username, password });
-        props.history.push("/dash")
-        
+        props.history.push("/dash");
       })
       .catch((err) => console.log(err));
   }

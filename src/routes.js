@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route} from 'react-router-dom'
-import Auth from './Components/Auth';
+import Auth from './Components/Auth/Auth';
 import Dash from './Components/Dash';
 import Form from './Components/Form';
 import Recipe from './Components/Recipe';

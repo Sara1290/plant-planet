@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -19,15 +20,15 @@ const Nav = (props) => {
 
   useEffect(() => {
     axios.get("/api/auth/me").then((res) => {
-        getUser(res.data);
-    });
-  }, [username]);
+      getUser(res.data);
+  });
+}, [username]);
 
-  const logout = () => {
-    axios.delete("/api/auth/logout")
-      .then((res) => {})
-      .catch((err) => console.log(err));
-  };
+const logout = () => {
+  axios.delete("/api/auth/logout")
+    .then((res) => {})
+    .catch((err) => console.log(err));
+};
   return (
       <div className="nav-bar">
       <div className="nav-planet-icon">
