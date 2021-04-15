@@ -11,6 +11,7 @@ import './Dash.css'
 
 const Dash = (props) => {
     const [dashRecipes, setDashRecipes] = useState([])
+    console.log(dashRecipes)
 
     useEffect(() => {
         axios 
@@ -20,11 +21,12 @@ const Dash = (props) => {
             })
             }, [])
 
+    
 
     let mappedRecipes = dashRecipes.map((recipes) => {
         return (
             <div key={recipes.plant_recipes_id} className="recipe-container">
-            <Link to={`recipe/{recipe_id}`}>    
+            <Link to={`/recipe/${recipes.plant_recipes_id}`}>    
             <img src={recipes.img} alt={recipes.title} className="recipe-images" />
             </Link>
             <span className="recipe-details">
