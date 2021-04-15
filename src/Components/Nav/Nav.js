@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { getUser, logoutUser } from "../../redux/userReducer";
 import "./Nav.css";
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 //I need to actually render a left-aligned vertical nav bar DONE
 //I need to use the getUser function from the server to get the username and prof_pic for the logged in user.
@@ -15,14 +15,18 @@ const Nav = (props) => {
   //   const [loggedIn, setLoggedIn] = useState(true);
   const [prof_pic, setProf_pic] = useState("");
   const [username, setUsername] = useState("");
-//   const user = useSelector(state => state)
-//   const dispatch = useDispatch();
+  // const { user } = useSelector((state) => state.userReducer)
+  const dispatch = useDispatch();
+  // const {username, prof_pic} = user;
 
   useEffect(() => {
-    axios.get("/api/auth/me").then((res) => {
-      getUser(res.data);
-  });
-}, [username]);
+      axios.get("/api/auth/me").then((res) => {
+        dispatch(getUser(res.data));
+      });
+    
+    }, [dispatch, username]);
+
+
 
 const logout = () => {
   axios.delete("/api/auth/logout")
