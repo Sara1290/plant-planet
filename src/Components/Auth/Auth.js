@@ -52,7 +52,7 @@ const Auth = (props) => {
   const loginView = (
     <div className="login-inputs">
       <input placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
-      <input placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
+      <input type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
     </div>
   );
 
@@ -60,7 +60,7 @@ const Auth = (props) => {
     <div className="register-inputs">
       <input placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
       <input placeholder="username" value={username} onChange={e => setUsername(e.target.value)} />
-      <input placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
+      <input type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
     </div>
   );
 

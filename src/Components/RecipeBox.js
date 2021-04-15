@@ -1,23 +1,33 @@
 import React from 'react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {savedRecipes} from '../redux/recipeReducer';
 import Nav from './Nav/Nav';
 
 
 const RecipeBox = (props) => {
-    const [savedRecipes, setSavedRecipes] = useState([]);
+    // const [boxRecipes, setBoxRecipes] = useState([]);
+    const {saved} = useSelector((state) => state.recipeReducer)
+    const {user} = useSelector((state) => state.userReducer)
+    const dispatch = useDispatch();
+    const { id } = user;
 
     useEffect(() => {
-        axios.get("/api/saved/:id")
-        .then((res) => {
-            setSavedRecipes(res.data)
-        })
-    }, [])
+        if (id){
+            axios.get(`/api/saved/${id}`)
+            .then((res) => {
+                dispatch(savedRecipes(res.data))
+            })
+            .catch(err => console.log(err))
+        }
+    }, [dispatch, id])
+console.log(saved)
 
-    let mappedRecipes = savedRecipes.map((recipes) => {
+    let mappedRecipes = saved.map((recipes) => {
         return (
             <div key={recipes.plant_recipes_id} className="recipe-container">
-            <img src={recipes.img} alt={recipes.title} className="recipe-images" />
+            <img src={saved.img} alt={recipes.title} className="recipe-images" />
             <span className="recipe-details">
             <p>{recipes.title}</p>
             {/* <p className="recipe-servings">{recipes.servings}</p> */}
@@ -28,9 +38,9 @@ const RecipeBox = (props) => {
     })
 
     return (
-        <div>
+        <div className="recipe-box-container">
         <Nav />
-        <h1>Your Recipe Box</h1>
+        <header>Your Recipe Box</header>
         {mappedRecipes}
         </div>
     )

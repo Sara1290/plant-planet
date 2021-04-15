@@ -4,6 +4,7 @@
 //immediatly on loading the user needs to see all the recipes ==> so useEffect to /api/recipes (get all recipes)
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 import {useState, useEffect } from 'react';
 import Nav from './Nav/Nav';
 import './Dash.css'
@@ -23,7 +24,9 @@ const Dash = (props) => {
     let mappedRecipes = dashRecipes.map((recipes) => {
         return (
             <div key={recipes.plant_recipes_id} className="recipe-container">
+            <Link to={`recipe/{recipe_id}`}>    
             <img src={recipes.img} alt={recipes.title} className="recipe-images" />
+            </Link>
             <span className="recipe-details">
             <p>{recipes.title}</p>
             {/* <p className="recipe-servings">{recipes.servings}</p> */}
