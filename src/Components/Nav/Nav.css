@@ -4,11 +4,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-image: linear-gradient(0deg, rgb(0, 128, 0), rgb(144, 238, 144), rgb(189, 247, 189));
+    background-image: linear-gradient(0deg, rgba(0, 128, 0, 0.5), rgb(144, 238, 144, 0.5), rgb(189, 247, 189, 0.5));
 }
 
 .nav-img {
     width: 65px;
+    border-radius: 20px;
 }
 
 .nav > div {
@@ -37,4 +38,6 @@
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    text-decoration: none;
+    color: black;
 }

@@ -1,8 +1,44 @@
+.dash-body {
+    height: 100vh;
+    box-sizing: border-box;
+    background-image: linear-gradient(45deg, rgba(12, 246, 141, .2), rgba(5, 235, 11, .2), rgba(179, 246, 12, .2));
+}
+
 .recipe-images {
     width: 150px;
     height: 125px;
+    border-radius: 15px;
 }
 
 .recipe-container {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    border-radius: 50px;
+    padding: 8px;
+    margin: 25px 50px 25px 100px;
+    background-color: rgba(11, 212, 65, .3);
+    /* display: flex; */
+    /* flex-direction: column; */
+}
+
+.recipe-details {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.search-input {
+    height: 25px;
+    border-radius: 50px;
+    border: none;
+}
+
+.search-button {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+}
+.mag {
+    width: 15px;
+    height: 15px;
 }

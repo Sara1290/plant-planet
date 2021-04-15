@@ -24,9 +24,11 @@ const Dash = (props) => {
         return (
             <div key={recipes.plant_recipes_id} className="recipe-container">
             <img src={recipes.img} alt={recipes.title} className="recipe-images" />
-            <p className="recipe-title">{recipes.title}</p>
-            <p className="recipe-servings">{recipes.servings}</p>
-            <p className="recipe-timeframe">{recipes.timeframe}</p>
+            <span className="recipe-details">
+            <p>{recipes.title}</p>
+            {/* <p className="recipe-servings">{recipes.servings}</p> */}
+            <p>{recipes.timeframe}</p>
+            </span>
             </div>
         )
     })
@@ -35,7 +37,7 @@ const Dash = (props) => {
         <div className="dash-body">
             <Nav />
             <input className="search-input" />
-            <button className="search-button">search</button>
+            <button className="search-button">{<img className="mag" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj9tux7y5PJ-BmGwqhGCjI1i2wan-ZzanLkg&usqp=CAU"/>}</button>
             {mappedRecipes}
         </div>
     )
