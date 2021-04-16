@@ -15,16 +15,18 @@ const Nav = (props) => {
   //   const [loggedIn, setLoggedIn] = useState(true);
   const [prof_pic, setProf_pic] = useState("");
   const [username, setUsername] = useState("");
-  // const { user } = useSelector((state) => state.userReducer)
+  const { user } = useSelector((state) => state.userReducer)
   const dispatch = useDispatch();
   // const {username, prof_pic} = user;
 
   useEffect(() => {
+    if (user) {
       axios.get("/api/auth/me").then((res) => {
         dispatch(getUser(res.data));
       });
+    }
     
-    }, [dispatch, username]);
+    }, [dispatch]);
 
 
 

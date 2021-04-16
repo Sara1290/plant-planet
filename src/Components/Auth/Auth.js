@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useState } from "react";
 import { loginUser, registerUser } from "../../redux/userReducer"
 
-import './Auth.css'
 
 const Auth = (props) => {
   const [email, setEmail] = useState("");
@@ -65,8 +64,8 @@ const Auth = (props) => {
   );
 
   return (
-    <div className="auth">
-      <header>Plant Planet</header>
+    <div className="auth-body">
+      <header className="auth-header">Plant Planet</header>
       <button onClick={toggleRegisterView}>Register View</button>
       <button onClick={toggleLoginView}>Login View</button>
       {showLoginView ? loginView : null}

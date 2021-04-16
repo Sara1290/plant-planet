@@ -41,7 +41,7 @@ const Dash = (props) => {
     return (
         <div className="dash-body">
             <Nav />
-            <input className="search-input" />
+            <input className="search-input" placeholder="Search By Title"/>
             <button className="search-button">{<img className="mag" alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj9tux7y5PJ-BmGwqhGCjI1i2wan-ZzanLkg&usqp=CAU"/>}</button>
             {mappedRecipes}
         </div>

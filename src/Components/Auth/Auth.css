@@ -1,5 +1,7 @@
-.auth {
-    width: 100vw;
-    height: 100vh;
+.auth-body {
+
     background-image: linear-gradient(45 deg, rgb(0, 128, 0), rgb(144, 238, 144), rgb(189, 247, 189));
+}
+.auth-header {
+    color:rgb(0, 128, 0)
 }
