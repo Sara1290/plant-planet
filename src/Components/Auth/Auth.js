@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { loginUser, registerUser } from "../../redux/userReducer"
+import { useDispatch } from 'react-redux'
 
 
 const Auth = (props) => {
@@ -9,7 +10,7 @@ const Auth = (props) => {
   const [username, setUsername] = useState("");
   const [showLoginView, setShowLoginView] = useState(true);
   const [showRegisterView, setShowRegisterView] = useState(false);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const toggleLoginView = () => {
     if (showLoginView) {
@@ -33,7 +34,8 @@ const Auth = (props) => {
     axios
       .post("/api/auth/login", { email, password })
       .then((res) => {
-        loginUser({ email, password });
+        console.log(res.data)
+        dispatch(loginUser(res.data));
         props.history.push("/dash");
       })
       .catch((err) => console.log(err));
@@ -43,7 +45,7 @@ const Auth = (props) => {
     axios
       .post("/api/auth/register", { email, username, password })
       .then((res) => {
-        registerUser({ email, username, password });
+        dispatch(registerUser(res.data));
         props.history.push("/dash");
       })
       .catch((err) => console.log(err));

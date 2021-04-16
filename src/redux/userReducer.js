@@ -1,7 +1,8 @@
 const initialState = {
     username: "",
     email: "",
-    prof_pic: ""
+    prof_pic: "",
+    id: null
 }
 
 
@@ -51,10 +52,13 @@ export default function reducer(state = initialState, action) {
                 user: action.payload
             }
         case LOGIN_USER:
+            console.log(action.payload)
             return {
                 ...state,
-                user: action.payload
-                // email: action.payload.email,
+                username: action.payload.username,
+                email: action.payload.email,
+                prof_pic: action.payload.prof_pic,
+                id: action.payload.id
             }
         case LOGOUT_USER:
             return initialState;

@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { getUser, logoutUser } from "../../redux/userReducer";
+import { getUser } from "../../redux/userReducer";
 import "./Nav.css";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -26,7 +26,7 @@ const Nav = (props) => {
       });
     }
     
-    }, [dispatch]);
+    }, [dispatch, user]);
 
 
 

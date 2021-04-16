@@ -7,9 +7,10 @@ import Nav from './Nav/Nav';
 
 
 const RecipeBox = (props) => {
-    // const [boxRecipes, setBoxRecipes] = useState([]);
     const {saved} = useSelector((state) => state.recipeReducer)
-    const {user} = useSelector((state) => state.userReducer)
+    const user = useSelector((state) => state.userReducer)
+    // const test = useSelector((state) => state)
+    // console.log(test)
     const dispatch = useDispatch();
     const { id } = user;
 

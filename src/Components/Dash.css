@@ -42,3 +42,15 @@
     width: 15px;
     height: 15px;
 }
+
+.add-button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(66, 133, 68, 0.2);
+    border-radius: 50%;
+}
+
+.add-button-img {
+    width: 15px;
+    height: 15px;
+}
