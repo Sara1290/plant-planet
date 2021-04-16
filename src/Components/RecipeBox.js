@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {savedRecipes} from '../redux/recipeReducer';
 import Nav from './Nav/Nav';
