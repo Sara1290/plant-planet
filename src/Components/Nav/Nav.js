@@ -35,6 +35,7 @@ const logout = () => {
     .then((res) => {})
     .catch((err) => console.log(err));
 };
+
   return (
       <div className="nav-bar">
       <div className="nav-planet-icon">
@@ -49,7 +50,7 @@ const logout = () => {
       <div className="nav-profile-container">
         <div
           className="nav-prof-pic"
-          style={{ backgroundImage: `url('${setProf_pic}')` }}
+          // style={{ backgroundImage: `url('${setProf_pic}')` }}
         ></div>
         <p>{username}</p>
       </div>
@@ -86,5 +87,4 @@ const logout = () => {
     </div>
   );
 };
-// https://cdn.hipwallpaper.com/i/79/69/lRjATv.png
 export default Nav;

@@ -28,7 +28,7 @@ console.log(saved)
     let mappedRecipes = saved.map((recipes) => {
         return (
             <div key={recipes.plant_recipes_id} className="recipe-container">
-            <img src={saved.img} alt={recipes.title} className="recipe-images" />
+            <img src={recipes.img} alt={recipes.title} className="recipe-images" />
             <span className="recipe-details">
             <p>{recipes.title}</p>
             {/* <p className="recipe-servings">{recipes.servings}</p> */}

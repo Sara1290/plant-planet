@@ -65,9 +65,9 @@ export default function reducer(state = initialState, action) {
         case GET_USER:
             return {
                 ...state,
-                user: action.payload
-                // username: action.payload.username,
-                // prof_pic: action.payload.prof_pic
+                // user: action.payload
+                username: action.payload.username,
+                prof_pic: action.payload.prof_pic
             }
         default: return state
     }
