@@ -1,9 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+// import { useHistory } from 'react-router-dom'
 import Nav from './Nav/Nav';
+
 
 const Form = (props) => {
 
+    // const history = useHistory()
     const [servings, setServings] = useState("");
     const [timeframe, setTimeFrame] = useState("");
     const [title, setTitle] = useState("");

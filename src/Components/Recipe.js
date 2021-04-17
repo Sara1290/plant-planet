@@ -28,7 +28,7 @@ const addToRecipeBox = (plant_recipes_id) => {
             <Nav />
             <button className="add-button" onClick={() => addToRecipeBox(id)} >{<img alt="" className="add-button-img" src="https://www.clipartkey.com/mpngs/m/50-505406_plus-sign-icon-button-green-approved-check-add.png" />}</button>
             <h1>{recipe.title}</h1>
-            <img src={recipe.img} />
+            <img alt="" src={recipe.img} />
             <p>{recipe.timeframe}</p>
             <p>{recipe.servings}</p>
             <p>{recipe.ingredients}</p>

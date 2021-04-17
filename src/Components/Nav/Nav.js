@@ -31,7 +31,7 @@ const Nav = (props) => {
 
 
 const logout = () => {
-  axios.delete("/api/auth/logout")
+  axios.post("/api/auth/logout")
     .then((res) => {})
     .catch((err) => console.log(err));
 };
@@ -50,7 +50,7 @@ const logout = () => {
       <div className="nav-profile-container">
         <div
           className="nav-prof-pic"
-          // style={{ backgroundImage: `url('${setProf_pic}')` }}
+          style={{ backgroundImage: `url('${prof_pic}')` }}
         ></div>
         <p>{username}</p>
       </div>
