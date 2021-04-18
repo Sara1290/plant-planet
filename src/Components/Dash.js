@@ -9,7 +9,7 @@ import {useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 // import {getUser} from '../redux/userReducer'
 import Nav from './Nav/Nav';
-import './Dash.css'
+import './Dash.scss'
 
 const Dash = (props) => {
     const [dashRecipes, setDashRecipes] = useState([]);

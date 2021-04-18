@@ -1,0 +1,20 @@
+//this is going to be where i make stuff like variables and mixins to call into my app
+
+@mixin gradientBackground {
+    width: 80vw + 30vw;
+    height: 80vh + 20vh;
+    background-image: linear-gradient(45deg, rgba(12, 246, 141, .2), rgba(5, 235, 11, .2), rgba(179, 246, 12, .2));
+}
+    
+// @mixin inputStyles {
+//     height: 35px;
+//     border-radius: 10px;
+//     border: none;
+//     color: $inputTextColor;
+// }
+
+$inputTextColor: black;
+
+$h1FontColor: rgb(0, 128, 0);
+
+$fontFamily: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;

@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { loginUser, registerUser } from "../../redux/userReducer"
 import { useDispatch } from 'react-redux'
-
+import './Auth.scss'
 
 const Auth = (props) => {
   const [email, setEmail] = useState("");
@@ -51,14 +51,14 @@ const Auth = (props) => {
       .catch((err) => console.log(err));
   }
   const loginView = (
-    <div className="login-inputs">
-      <input placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
+    <div className="auth-inputs">
+      <input placeholder="email" value={email} onChange={e => setEmail(e.target.value)} /> <br />
       <input type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
     </div>
   );
 
   const registerView = (
-    <div className="register-inputs">
+    <div className="auth-inputs">
       <input placeholder="email" value={email} onChange={e => setEmail(e.target.value)} />
       <input placeholder="username" value={username} onChange={e => setUsername(e.target.value)} />
       <input type="password" placeholder="password" value={password} onChange={e => setPassword(e.target.value)} />
@@ -67,7 +67,8 @@ const Auth = (props) => {
 
   return (
     <div className="auth-body">
-      <header className="auth-header">Plant Planet</header>
+      <h1 className="auth-header">Welcome to Plant Plannet!</h1>
+      <h3> A recipe sharing app made to simplify your search for plant based recipes</h3>
       <button onClick={toggleRegisterView}>Register View</button>
       <button onClick={toggleLoginView}>Login View</button>
       {showLoginView ? loginView : null}

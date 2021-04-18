@@ -1,10 +1,41 @@
-.App {
-  text-align: center;
+@use './index.scss' as i;
+
+.auth-body {
+@include i.gradientBackground();
+
 }
 
+.App {
+  text-align: center;
+  display: flex;
+}
 
+// input {
+//   height: 35px;
+//   border-radius: 10px;
+//   border: none;
+//   color: i.$inputTextColor;
 
+// }
 
+button {
+  background-color: white;
+  border-radius: 25px;
+  border: none;
+}
+
+p {
+  font-family: i.$fontFamily;
+}
+
+h1 {
+  font-family: i.$fontFamily;
+  color: i.$h1FontColor
+}
+
+h3 {
+  font-family: i.$fontFamily;
+}
 
 
 

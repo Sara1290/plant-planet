@@ -1,0 +1,11 @@
+@use '../../index.scss' as i;
+@use '../../App.scss' as a;
+
+
+
+.auth-inputs {
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    color: i.$inputTextColor;
+}
