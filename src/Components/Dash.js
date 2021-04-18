@@ -80,6 +80,7 @@ const Dash = (props) => {
     //map over the recipes that match search results
     let mappedSearch = searchResults.map((recipes) => {
         return (
+
             <div className="recipe-container">
             <Link to={`/recipe/${recipes.plant_recipes_id}`}>    
             <img src={recipes.img} alt={recipes.title} className="recipe-images" />

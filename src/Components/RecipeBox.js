@@ -25,7 +25,7 @@ console.log(saved)
 
     let mappedRecipes = saved.map((recipes) => {
         return (
-            <div key={recipes.plant_recipes_id} className="recipe-container">
+            <div className="recipe-container">
             <img src={recipes.img} alt={recipes.title} className="recipe-images" />
             <span className="recipe-details">
             <p>{recipes.title}</p>
@@ -39,7 +39,7 @@ console.log(saved)
     return (
         <div className="recipe-box-container">
         <Nav />
-        <header>Your Recipe Box</header>
+        <h1>Your Recipe Box</h1>
         {mappedRecipes}
         </div>
     )

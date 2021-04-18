@@ -5,7 +5,8 @@ import Nav from './Nav/Nav';
 import './Form.scss'
 
 
-const Form = (props) => {
+const EditForm = (props) => {
+    const { id } = props.match.params
 
     // const history = useHistory()
     const [servings, setServings] = useState("");
@@ -16,7 +17,7 @@ const Form = (props) => {
     const [img, setImg] = useState("");
 
     const submit = () => {
-        axios.post("/api/create", {servings, timeframe, title, ingredients, method, img})
+        axios.put(`/api/edit/${id}`, {servings, timeframe, title, ingredients, method, img})
         .then(() => props.history.push("/dash"))
         .catch((err) => console.log(err))
     }
@@ -26,7 +27,7 @@ const Form = (props) => {
 
     return (
         <div className="form-container">
-            <h1>Submit Your <br /> Own Recipe!</h1>
+            <h1>Edit Your <br /> Recipe!</h1>
             <Nav />
             <input className="form-input" value={servings} onChange={e => setServings(e.target.value)} placeholder="servings"/>
             <br />
@@ -45,4 +46,4 @@ const Form = (props) => {
     )
 
 }
-export default Form;
+export default EditForm;

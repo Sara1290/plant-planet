@@ -1,0 +1,13 @@
+@use '../index.scss' as i;
+
+.form-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    input {
+        width: 60vw;
+        height: 10vh;
+    }
+}

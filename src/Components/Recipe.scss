@@ -1,3 +1,19 @@
 @use '../index.scss' as i;
 
 
+.single-recipe-img {
+    height: 35vh;
+    width: 55vw;
+    border-radius: 25px;
+}
+
+// .edit-button {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: flex-end;
+// }
+
+// .add-button {
+//     @extend .edit-button;
+// }

@@ -1,6 +1,7 @@
 //display a recipe here a fullll page view.
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Nav from './Nav/Nav';
 import './Recipe.scss'
 
@@ -27,9 +28,12 @@ const addToRecipeBox = (plant_recipes_id) => {
     return (
         <div>
             <Nav />
-            <button className="add-button" onClick={() => addToRecipeBox(id)} >{<img alt="" className="add-button-img" src="https://www.clipartkey.com/mpngs/m/50-505406_plus-sign-icon-button-green-approved-check-add.png" />}</button>
             <h1>{recipe.title}</h1>
-            <img alt="" src={recipe.img} />
+            <img className="single-recipe-img" alt="" src={recipe.img} />
+            <Link to={`/editForm/${recipe.plant_recipes_id}`}>
+            <button className="edit-button">Edit</button>
+            </Link>
+            <button className="add-button" onClick={() => addToRecipeBox(id)} >{<img alt="" className="add-button-img" src="https://www.clipartkey.com/mpngs/m/50-505406_plus-sign-icon-button-green-approved-check-add.png" />}</button>
             <p>{recipe.timeframe}</p>
             <p>{recipe.servings}</p>
             <p>{recipe.ingredients}</p>

@@ -1,11 +1,5 @@
 @use './index.scss' as i;
 
-// .auth-body {
-// @include i.gradientBackground();
-
-// }
-
-
 
 .App {
   text-align: center;
@@ -24,7 +18,12 @@ button {
   background-color: white;
   border-radius: 25px;
   border: none;
+  &:hover {
+    background-color: rgba(65, 219, 65, 0.37);
+  }
 }
+
+
 
 p {
   font-family: i.$fontFamily;
