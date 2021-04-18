@@ -1,9 +1,9 @@
 //this is going to be where i make stuff like variables and mixins to call into my app
 
 @mixin gradientBackground {
-    width: 80vw + 30vw;
+    width: 80vw + 20vw;
     height: 80vh + 20vh;
-    background-image: linear-gradient(45deg, rgba(12, 246, 141, .2), rgba(5, 235, 11, .2), rgba(179, 246, 12, .2));
+    background-image: linear-gradient(45deg, rgba(12, 246, 141, .2), rgba(5, 235, 11, .2), rgba(90, 221, 14, 0.2));
 }
     
 // @mixin inputStyles {

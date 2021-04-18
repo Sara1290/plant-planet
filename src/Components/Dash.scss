@@ -3,7 +3,7 @@
 .dash-body {
     // background-image: linear-gradient(45deg, rgba(12, 246, 141, .2), rgba(5, 235, 11, .2), rgba(179, 246, 12, .2));
     @include i.gradientBackground();
-    height: 300vh;
+    // height: 300vh;
     width: 100vw;
     box-sizing: border-box;
 }

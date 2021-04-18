@@ -2,6 +2,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Nav from './Nav/Nav';
+import './Recipe.scss'
 
 const Recipe = (props) => {
     const { id } = props.match.params

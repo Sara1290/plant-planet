@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { getUser } from "../../redux/userReducer";
-import "./Nav.css";
+import "./Nav.scss";
 import { useDispatch, useSelector } from "react-redux";
 
 //I need to actually render a left-aligned vertical nav bar DONE
@@ -56,32 +56,32 @@ const logout = () => {
       </div>
       <div className="nav-link-container">
         <Link to="/recipeBox">
-          <p className="nav-links">Recipe Box</p>
-          {/* <img
+          {/* <p className="nav-links">Recipe Box</p> */}
+          <img
             className="nav-img"
             src={"https://static.thenounproject.com/png/51422-200.png"}
             alt="recipe-box"
-          /> */}
+          />
         </Link>
         <Link to="/form">
-          <p className="nav-links">Add New Recipe</p>
-          {/* <img
+          {/* <p className="nav-links">Add New Recipe</p> */}
+          <img
             className="nav-img"
             src={
               "https://cdn.iconscout.com/icon/premium/png-512-thumb/add-post-1702566-1486981.png"
             }
             alt="add new recipe"
-          /> */}
+          />
         </Link>
         <Link to="/" onClick={logout}>
-          <p className="nav-links">Logout</p>
-          {/* <img
+          {/* <p className="nav-links">Logout</p> */}
+          <img
             className="nav-img"
             src={
               "https://cdn1.iconfinder.com/data/icons/door-3/200/1333_door-512.png"
             }
             alt="logout"
-          /> */}
+          />
         </Link>
       </div>
     </div>

@@ -1,22 +1,24 @@
 @use './index.scss' as i;
 
-.auth-body {
-@include i.gradientBackground();
+// .auth-body {
+// @include i.gradientBackground();
 
-}
+// }
+
+
 
 .App {
   text-align: center;
-  display: flex;
+  @include i.gradientBackground();
 }
 
-// input {
-//   height: 35px;
-//   border-radius: 10px;
-//   border: none;
-//   color: i.$inputTextColor;
+input {
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  color: i.$inputTextColor;
 
-// }
+}
 
 button {
   background-color: white;
@@ -26,6 +28,7 @@ button {
 
 p {
   font-family: i.$fontFamily;
+  font-weight: 500;
 }
 
 h1 {
