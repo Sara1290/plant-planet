@@ -12,7 +12,7 @@ export default (
         <Route exact path = "/" component = { Auth } />
         <Route path = "/dash" component = { Dash } />
         <Route path = "/form" component = { Form } />
-        <Route path = "/editForm" component = { EditForm } />
+        <Route path = "/editForm/:id" component = { EditForm } />
         <Route path = "/recipe/:id" component = { Recipe } />
         <Route path = "/recipeBox" component = { RecipeBox } />
     </Switch>

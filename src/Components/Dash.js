@@ -36,7 +36,7 @@ const Dash = (props) => {
             .then((res) => {
                 setDashRecipes(res.data)
             }).catch(err => console.log(err))
-            }, [])
+    }, [])
 
     
     //save to the Recipe Box

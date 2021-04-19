@@ -1,20 +1,37 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import { useHistory } from 'react-router-dom'
 import Nav from './Nav/Nav';
 import './Form.scss'
+// import Recipe from './Recipe';
 
 
 const EditForm = (props) => {
     const { id } = props.match.params
+    
+   
 
     // const history = useHistory()
-    const [servings, setServings] = useState("");
+    const [servings, setServings] = useState();
     const [timeframe, setTimeFrame] = useState("");
     const [title, setTitle] = useState("");
     const [ingredients, setIngredients] = useState("");
     const [method, setMethod] = useState("");
     const [img, setImg] = useState("");
+    const [edit, setEdit] = useState({});
+
+
+    useEffect(() => {
+        axios.get(`/api/recipe/${id}`)
+        .then((res) => {
+            setEdit(res.data)
+            // console.log(recipe)
+        })
+        .catch(err => console.log(err))
+    }, [id])
+
+    console.log(id)
+// console.log(recipe)
 
     const submit = () => {
         axios.put(`/api/edit/${id}`, {servings, timeframe, title, ingredients, method, img})

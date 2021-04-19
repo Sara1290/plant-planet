@@ -7,6 +7,7 @@ import './Recipe.scss'
 
 const Recipe = (props) => {
     const { id } = props.match.params
+    //yes, this is actually logging the recipe id below. cool. 
     console.log(id)
     const [recipe, setRecipe] = useState({})
 
@@ -18,6 +19,7 @@ const Recipe = (props) => {
         })
         .catch(err => console.log(err))
     }, [id])
+//logs the details of the recipe object.
 console.log(recipe)
 
 const addToRecipeBox = (plant_recipes_id) => {
@@ -30,14 +32,14 @@ const addToRecipeBox = (plant_recipes_id) => {
             <Nav />
             <h1>{recipe.title}</h1>
             <img className="single-recipe-img" alt="" src={recipe.img} />
-            <Link to={`/editForm/${recipe.plant_recipes_id}`}>
+            <Link to={`/editForm/${id}`} >
             <button className="edit-button">Edit</button>
             </Link>
             <button className="add-button" onClick={() => addToRecipeBox(id)} >{<img alt="" className="add-button-img" src="https://www.clipartkey.com/mpngs/m/50-505406_plus-sign-icon-button-green-approved-check-add.png" />}</button>
-            <p>{recipe.timeframe}</p>
-            <p>{recipe.servings}</p>
-            <p>{recipe.ingredients}</p>
-            <p>{recipe.method}</p>
+            <p className="recipe-deets">{recipe.timeframe}</p>
+            <p className="recipe-deets">{recipe.servings}</p>
+            <p className="recipe-deets">{recipe.ingredients}</p>
+            <p className="recipe-deets">{recipe.method}</p>
             {/* {recipeMap} */}
         </div>
     )
