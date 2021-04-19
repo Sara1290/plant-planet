@@ -18,14 +18,18 @@ const EditForm = (props) => {
     const [ingredients, setIngredients] = useState("");
     const [method, setMethod] = useState("");
     const [img, setImg] = useState("");
-    const [edit, setEdit] = useState({});
+    // const [edit, setEdit] = useState({});
 
 
     useEffect(() => {
         axios.get(`/api/recipe/${id}`)
         .then((res) => {
-            setEdit(res.data)
-            // console.log(recipe)
+            setServings(res.data.servings)
+            setTimeFrame(res.data.timeframe)
+            setTitle(res.data.title)
+            setIngredients(res.data.ingredients)
+            setMethod(res.data.method)
+            setImg(res.data.img)
         })
         .catch(err => console.log(err))
     }, [id])
