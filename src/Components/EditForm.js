@@ -23,6 +23,7 @@ const EditForm = (props) => {
 
     useEffect(() => {
         axios.get(`/api/recipe/${id}`)
+        //i can do this because res.data gives me the entire recipe object
         .then((res) => {
             setServings(res.data.servings)
             setTimeFrame(res.data.timeframe)

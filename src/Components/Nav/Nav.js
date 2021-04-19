@@ -38,23 +38,23 @@ const logout = () => {
 
   return (
       <div className="nav-bar">
-      <div className="nav-planet-icon">
-        <Link to="/dash">
-          <img
-            className="nav-img"
-            src={"https://cdn.hipwallpaper.com/i/79/69/lRjATv.png"}
-            alt="dash"
-          />
-        </Link>
-      </div>
-      <div className="nav-profile-container">
-        <div
+                  <div className="nav-planet-icon">
+                    <Link to="/dash">
+                      <img
+                        className="nav-img"
+                        src={"https://cdn.hipwallpaper.com/i/79/69/lRjATv.png"}
+                        alt="dash"
+                      />
+                    </Link>
+                  </div>
+        {/* <div
           className="nav-prof-pic"
-          style={{ backgroundImage: `url('${prof_pic}')` }}
-        ></div>
-        <p>{username}</p>
-      </div>
-      <div className="nav-link-container">
+          
+          ></div>
+          <p>{username}</p>
+        </div> */}
+      {/* <div className="nav-link-container"> */}
+        <div className="nav-profile-container">
         <Link to="/recipeBox">
           {/* <p className="nav-links">Recipe Box</p> */}
           <img

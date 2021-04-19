@@ -1,5 +1,5 @@
 .nav-bar {
-    width: 65px;
+    width: 15vw;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -12,27 +12,27 @@
     border-radius: 20px;
 }
 
-.nav > div {
-    margin: 0 0 45px;
-}
+// .nav > div {
+//     margin: 0 0 45px;
+// }
+
 
 .nav-profile-container {
-    height: 55vh;
+    height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 
-.nav-profile-pic {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: white;
-    border: 1px solid black;
+// .nav-profile-pic {
+//     width: 80px;
+//     height: 80px;
+//     border-radius: 50%;
+//     background-color: white;
+//     border: 1px solid black;
 
-}
-
+// }
 .nav-links {
     display: flex;
     flex-direction: column;

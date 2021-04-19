@@ -31,14 +31,18 @@ const Dash = (props) => {
 
     //show all the recipes
     useEffect(() => {
+        getRecipes()
+
+    }, [])
+
+    const getRecipes = () => {
         axios 
             .get("/api/recipes")
             .then((res) => {
                 setDashRecipes(res.data)
             }).catch(err => console.log(err))
-    }, [])
+    }
 
-    
     //save to the Recipe Box
     const addToRecipeBox = (plant_recipes_id) => {
         axios.post(`/api/save/${plant_recipes_id}`)
@@ -49,7 +53,7 @@ const Dash = (props) => {
     const deleteRecipe = (id) => {
         axios.delete(`/api/delete/${id}`)
         .then(() => {
-            
+            getRecipes()
         })
     }
 
@@ -99,6 +103,7 @@ const Dash = (props) => {
     //the return for what's going to show up for the user.
     return (
         <div className="dash-body">
+            <h1>Welcome Back, {username}! </h1>
             <Nav />
             <input className="search-input" type="text" placeholder="Search By Title" value={search} onChange={handleChange} />
             {/* <button className="search-button">{<img className="mag" alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj9tux7y5PJ-BmGwqhGCjI1i2wan-ZzanLkg&usqp=CAU"/>}</button> */}
