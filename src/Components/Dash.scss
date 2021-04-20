@@ -5,7 +5,7 @@
     // @include i.gradientBackground();
     width: 100vw;
     height: 300vh;
-    // box-sizing: border-box;
+    // margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
@@ -21,7 +21,7 @@
 .recipe-container {
     /* border: 1px solid black; */
     border-radius: 50px;
-    padding: 8px;
+    padding: 7px;
     margin: 25px 50px 25px 100px;
     background-color: rgba(11, 212, 65, .3);
     /* display: flex; */
@@ -76,7 +76,7 @@
     }
 }
 //once we hit 770 px these styles will be true, but they have to be declared in this order because if the screen is at 771 px then it's
-@media (min-width: 770px ) {
+@media (min-width: 768px ) {
     .dash-body{
         display: flex;
         flex-direction: column;

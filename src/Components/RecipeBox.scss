@@ -1,4 +1,6 @@
-@media (min-width: 770px ) {
+//this component is receiving it's media query for the mobile view from Dash.scss, since the classNames are the same. They're meant to be 
+//very similar looking pages.
+@media (min-width: 768px ) {
     .recipe-box-body{
         display: flex;
         flex-direction: column;

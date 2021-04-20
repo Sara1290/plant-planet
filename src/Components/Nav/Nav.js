@@ -6,18 +6,15 @@ import { getUser } from "../../redux/userReducer";
 import "./Nav.scss";
 import { useDispatch, useSelector } from "react-redux";
 
-//I need to actually render a left-aligned vertical nav bar DONE
-//I need to use the getUser function from the server to get the username and prof_pic for the logged in user.
-//I need to have a functioning log out button
-//I need to have icons that link to Add New Recipe (Form), Recipe Box, and Dash (logo, will be like home.)
+
 
 const Nav = (props) => {
-  //   const [loggedIn, setLoggedIn] = useState(true);
+ 
   const [prof_pic, setProf_pic] = useState("");
   const [username, setUsername] = useState("");
   const { user } = useSelector((state) => state.userReducer)
   const dispatch = useDispatch();
-  // const {username, prof_pic} = user;
+ 
 
   useEffect(() => {
     if (user) {
@@ -37,7 +34,7 @@ const logout = () => {
 };
 
   return (
-      <div className="nav-bar">
+    <div className="nav-bar">
                   <div className="nav-planet-icon">
                     <Link to="/dash">
                       <img

@@ -12,11 +12,6 @@
     border-radius: 20px;
 }
 
-// .nav > div {
-//     margin: 0 0 45px;
-// }
-
-
 .nav-profile-container {
     height: 90vh;
     display: flex;
@@ -25,14 +20,17 @@
     align-items: center;
 }
 
-// .nav-profile-pic {
-//     width: 80px;
-//     height: 80px;
-//     border-radius: 50%;
-//     background-color: white;
-//     border: 1px solid black;
-
+// .nav-planet-icon {
+//     align-self: center;
 // }
+
+// .planet-img {
+//     width: 65px;
+//     height: 65px;
+    
+// }
+
+
 .nav-links {
     display: flex;
     flex-direction: column;
@@ -41,6 +39,7 @@
     text-decoration: none;
     color: black;
 }
+
 //so it has to be atleast 375 px before this is true.
 @media (min-width: 375px){
     .nav-bar {
