@@ -41,3 +41,16 @@
     text-decoration: none;
     color: black;
 }
+//so it has to be atleast 375 px before this is true.
+@media (min-width: 375px){
+    .nav-bar {
+        width: 12vw;
+        height: 100vh;
+    }
+}
+@media (min-width: 770px ) {
+    .nav-bar{
+        width: 10vw;
+        height: 100vh;
+    }
+}

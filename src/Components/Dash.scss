@@ -5,7 +5,9 @@
     // @include i.gradientBackground();
     width: 100vw;
     height: 300vh;
-    box-sizing: border-box;
+    // box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 .recipe-images {
@@ -32,18 +34,21 @@
 }
 
 .search-input {
+    width: 40vw;
     height: 25px;
+    justify-content: center;
+    margin: 1px auto;
     border-radius: 50px;
     border: none;
 }
 
-.search-button {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: none;
-    background-color: white;
-}
+// .search-button {
+//     width: 25px;
+//     height: 25px;
+//     border-radius: 50%;
+//     border: none;
+//     background-color: white;
+// }
 // .mag {
 //     width: 15px;
 //     height: 15px;
@@ -59,4 +64,36 @@
 .add-button-img {
     width: 15px;
     height: 15px;
+}
+
+
+//so it has to be atleast 375 px before this is true.
+@media (min-width: 375px){
+    .recipe-container{
+        width: 40vw;
+        margin:  25px auto;
+    }
+}
+//once we hit 770 px these styles will be true, but they have to be declared in this order because if the screen is at 771 px then it's
+@media (min-width: 770px ) {
+    .dash-body{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 85vw;
+        margin: auto 75px;
+        // margin: 20px auto;
+    }
+    .outer-recipe-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .recipe-container{
+        width: 40vw;
+        height: 200px;
+        margin:  25px auto;
+        // flex-direction: row;
+        // flex-wrap: wrap;
+    }
 }
