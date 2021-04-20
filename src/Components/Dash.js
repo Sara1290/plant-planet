@@ -103,7 +103,7 @@ const Dash = (props) => {
     //the return for what's going to show up for the user.
     return (
         <div className="dash-body">
-            <h1>Welcome Back, {username}! </h1>
+            <h1>Welcome Back,<br/> {username}! </h1>
             <Nav />
             <input className="search-input" type="text" placeholder="Search By Title" value={search} onChange={handleChange} />
             {/* <button className="search-button">{<img className="mag" alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj9tux7y5PJ-BmGwqhGCjI1i2wan-ZzanLkg&usqp=CAU"/>}</button> */}
