@@ -68,9 +68,10 @@
 
 
 //so it has to be atleast 375 px before this is true.
-@media (min-width: 375px){
+//this should effect Dash and Recipe Box
+@media (min-width: 480px){
     .recipe-container{
-        width: 40vw;
+        width: 55vw;
         margin:  25px auto;
     }
 }
