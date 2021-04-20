@@ -2,6 +2,11 @@
 @use '../../App.scss' as a;
 
 
+.auth-body-container {
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+}
 
 .auth-body{
     border: none;
@@ -9,7 +14,8 @@
     border-radius: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    //this stuff is centering all the babies INSIDE the container, not moving the container.
+    // justify-content: center;
     // align-items: flex-end;
 }
 
@@ -29,5 +35,25 @@
 
 .auth-view-buttons-container {
     @extend .auth-button-container;
+}
+
+// @media (min-width: 769px){
+//     .auth-body{
+//         width: 100vw;
+//     }
+// }
+
+//so once the screen hits 770px the green box will not be full width
+@media (min-width: 375px){
+    .auth-body {
+        width: 100vw;
+        height: 50vh;
+    }
+}
+@media (min-width: 770px ) {
+    .auth-body{
+        width: 500px;
+        height: 400px;
+    }
 }
 

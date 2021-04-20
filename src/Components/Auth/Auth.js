@@ -89,6 +89,7 @@ const Auth = (props) => {
   );
 
   return (
+    <div className="auth-body-container">
     <div className="auth-body">
       <h1 className="auth-header">
         Welcome to <br /> Plant Planet!
@@ -112,6 +113,7 @@ const Auth = (props) => {
           Register
         </button>
       </div>
+    </div>
     </div>
   );
 };
