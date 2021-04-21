@@ -13,7 +13,7 @@ const Auth = (props) => {
   const dispatch = useDispatch();
   // const {user} = useSelector((state) => state)
   // const {username, email} = user;
-  const title = `Welcome to Plant Planet, ${username}!`;
+  const title = `Welcome to Plant Planet!`;
   const message = "Thank you for joining Plant Planet! Get Started sharing your favorite plant based recipes today!"
 
   const toggleLoginView = () => {

@@ -7,7 +7,7 @@ const { EMAIL, PASSWORD } = process.env
 module.exports = {
   email: async (req, res) => {
     const {message, email, title} = req.body
-    const name = "Sara Reed"
+    const name = "Plant Planet"
 
     try {
       //invoke the createTransport function passing in your email information. 
@@ -21,8 +21,8 @@ module.exports = {
 
       //invoke the sendMail function with the info in the email
       let info = await transporter.sendMail({
-        from: `'${name}' <${email}>`, //This will show up when you go into the email
-        to: EMAIL,
+        from: `'${name}' <${EMAIL}>`, //This will show up when you go into the email
+        to: email,
         subject: title, //This will show on the subject of the email
         text: message, //for clients with plaintext support only
         html: `<div>${message}<div> 
