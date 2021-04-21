@@ -11,6 +11,10 @@ const Auth = (props) => {
   const [showLoginView, setShowLoginView] = useState(true);
   const [showRegisterView, setShowRegisterView] = useState(false);
   const dispatch = useDispatch();
+  // const {user} = useSelector((state) => state)
+  // const {username, email} = user;
+  const title = `Welcome to Plant Planet, ${username}!`;
+  const message = "Thank you for joining Plant Planet! Get Started sharing your favorite plant based recipes today!"
 
   const toggleLoginView = () => {
     if (showLoginView) {
@@ -36,6 +40,7 @@ const Auth = (props) => {
       .then((res) => {
         console.log(res.data);
         dispatch(loginUser(res.data));
+        handleSend()
         props.history.push("/dash");
       })
       .catch((err) => console.log(err));
@@ -46,10 +51,20 @@ const Auth = (props) => {
       .post("/api/auth/register", { email, username, password })
       .then((res) => {
         dispatch(registerUser(res.data));
+        handleSend()
         props.history.push("/dash");
       })
       .catch((err) => console.log(err));
   }
+
+  function handleSend() {
+    axios.post('/api/email', { username, email, message, title, })
+    .then(res => {
+      console.log("email sent")
+    }
+    )
+}
+  
   const loginView = (
     <div className="auth-inputs">
       <input
@@ -117,4 +132,5 @@ const Auth = (props) => {
     </div>
   );
 };
+
 export default Auth;

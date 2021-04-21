@@ -4,6 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const authCtrl = require("./authController");
 const recCtrl = require("./recipeController"); 
+const nmCtrl = require("./nodeMailerCtrl")
 
 const app = express();
 
@@ -35,6 +36,10 @@ app.put('/api/edit/:recipe', recCtrl.editRecipe)
 app.delete('/api/delete/:id', recCtrl.deleteRecipe)
 app.post('/api/save/:recipe', recCtrl.saveRecipe)
 app.get('/api/saved/:id', recCtrl.savedToUser)
+
+//nodemailer endpoint
+app.post('/api/email',nmCtrl.email)
+
 
 massive ({
     connectionString : CONNECTION_STRING,
