@@ -3,9 +3,12 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { getUser } from "../../redux/userReducer";
-import "./Nav.scss";
 import { useDispatch, useSelector } from "react-redux";
-
+import "./Nav.scss";
+import plantlogo from "../../assets/plant_planet_trans.png"
+import logout_img from "../../assets/logout.png"
+import add_button from "../../assets/add_button.png"
+import recipe_box from "../../assets/recipe_box.png"
 
 
 const Nav = (props) => {
@@ -39,7 +42,7 @@ const logout = () => {
                     <Link to="/dash">
                       <img
                         className="nav-img"
-                        src={"https://cdn.hipwallpaper.com/i/79/69/lRjATv.png"}
+                        src={plantlogo}
                         alt="dash"
                       />
                     </Link>
@@ -56,7 +59,7 @@ const logout = () => {
           {/* <p className="nav-links">Recipe Box</p> */}
           <img
             className="nav-img"
-            src={"https://static.thenounproject.com/png/51422-200.png"}
+            src={recipe_box}
             alt="recipe-box"
           />
         </Link>
@@ -64,9 +67,7 @@ const logout = () => {
           {/* <p className="nav-links">Add New Recipe</p> */}
           <img
             className="nav-img"
-            src={
-              "https://cdn.iconscout.com/icon/premium/png-512-thumb/add-post-1702566-1486981.png"
-            }
+            src={add_button}
             alt="add new recipe"
           />
         </Link>
@@ -74,9 +75,7 @@ const logout = () => {
           {/* <p className="nav-links">Logout</p> */}
           <img
             className="nav-img"
-            src={
-              "https://cdn1.iconfinder.com/data/icons/door-3/200/1333_door-512.png"
-            }
+            src={logout_img}
             alt="logout"
           />
         </Link>

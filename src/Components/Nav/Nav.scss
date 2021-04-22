@@ -8,15 +8,15 @@
 }
 
 .nav-img {
-    width: 55px;
-    border-radius: 20px;
+    width: 100px;
+    border-radius: 100px;
 }
 
 .nav-profile-container {
     height: 90vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -24,9 +24,9 @@
 //     align-self: center;
 // }
 
-// .planet-img {
-//     width: 65px;
-//     height: 65px;
+// .plant-logo {
+//     width: 100px;
+//     height: 100px;
     
 // }
 

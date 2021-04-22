@@ -19,7 +19,10 @@ button {
   border-radius: 25px;
   border: none;
   &:hover {
-    background-color: lighten(green, 35%);
+    background-color: lighten(green, 45%);
+  }
+  &:focus {
+    background-color: lighten(green, 45%);
   }
 }
 
