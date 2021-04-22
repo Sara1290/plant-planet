@@ -12,11 +12,6 @@ const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env;
 
 const path = require('path')
 
-app.use(express.static(`${__dirname}/../build`))
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build/index.html'))
-  })
 
 
 app.use(express.json());
@@ -49,6 +44,11 @@ app.get('/api/saved/:id', recCtrl.savedToUser)
 //nodemailer endpoint
 app.post('/api/email',nmCtrl.email)
 
+app.use(express.static(`${__dirname}/../build`))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../build/index.html'))
+  })
 
 massive ({
     connectionString : CONNECTION_STRING,
