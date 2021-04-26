@@ -27,7 +27,7 @@ const Dash = (props) => {
       recipe.title.includes(search)
     );
     setSearchResults(results);
-  }, [search]); //if i add dashRecipes the dap. array then ..the delete button goes away.. and it's dependent on a recipe author_username matching a logged in username... but in the console i'm seeing a user logged in.
+  }, [search]); //if i add dashRecipes the dep. array then ..the delete button goes away.. and it's dependent on a recipe author_username matching a logged in username... but in the console i'm seeing a user logged in.
 
   //show all the recipes
   useEffect(() => {
@@ -50,7 +50,8 @@ const Dash = (props) => {
 
   //logged in user can delete their submitted recipe
   const deleteRecipe = (id) => {
-    axios.delete(`/api/delete/${id}`).then(() => {
+    axios.delete(`/api/delete/${id}`)
+    .then(() => {
       getRecipes();
     });
   };

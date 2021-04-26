@@ -40,7 +40,6 @@ const Auth = (props) => {
       .then((res) => {
         console.log(res.data);
         dispatch(loginUser(res.data));
-        handleSend()
         props.history.push("/dash");
       })
       .catch((err) => console.log(err));

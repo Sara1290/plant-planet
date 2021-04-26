@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { getUser } from "../../redux/userReducer";
@@ -13,8 +13,8 @@ import recipe_box from "../../assets/recipe_box.png"
 
 const Nav = (props) => {
  
-  const [prof_pic, setProf_pic] = useState("");
-  const [username, setUsername] = useState("");
+  // const [prof_pic, setProf_pic] = useState("");
+  // const [username, setUsername] = useState("");
   const { user } = useSelector((state) => state.userReducer)
   const dispatch = useDispatch();
  

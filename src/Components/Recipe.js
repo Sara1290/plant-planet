@@ -1,20 +1,22 @@
 //display a recipe here a fullll page view.
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Nav from './Nav/Nav';
 import './Recipe.scss'
 
 const Recipe = (props) => {
-    const { id } = props.match.params
-    //yes, this is actually logging the recipe id below. cool. 
-    console.log(id)
+    const { id } = props.match.params 
+    console.log(id)//confirm, this does show a recipe id
     const [recipe, setRecipe] = useState({})
+    const { username } = useSelector((state) => state.userReducer)
+    console.log(username) //confirm, we do see the logged in user's username
 
     useEffect(() => {
         axios.get(`/api/recipe/${id}`)
         .then((res) => {
-            console.log(res.data)
+            console.log(res.data)//confirm, does show recipe object
             setRecipe(res.data)
         })
         .catch(err => console.log(err))
@@ -35,8 +37,13 @@ const addToRecipeBox = (plant_recipes_id) => {
             </div>
             <img className="single-recipe-img" alt="" src={recipe.img} />
             <div className="button-container">
-            <Link to={`/editForm/${id}`} >
-            <button className="edit-button">Edit</button>
+            {/* {recipe.author_username === username 
+                ? <Link to={`/editForm/${id}`}>
+                  <button className="edit-button">Edit</button>
+                  </Link>
+                : null} */}
+            <Link to={`/editForm/${id}`}>
+                <button className="edit-button">Edit</button>
             </Link>
             <button className="add-button" onClick={() => addToRecipeBox(id)} >{<img alt="" className="add-button-img" src="https://www.clipartkey.com/mpngs/m/50-505406_plus-sign-icon-button-green-approved-check-add.png" />}</button>
             </div>

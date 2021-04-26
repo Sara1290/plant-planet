@@ -7,7 +7,7 @@
     height: 300vh;
     // margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 
 .recipe-images {
@@ -80,7 +80,7 @@
     .dash-body{
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        flex-wrap: wrap-reverse;
         width: 85vw;
         margin: auto 75px;
         // margin: 20px auto;
@@ -88,7 +88,7 @@
     .outer-recipe-container {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
+        flex-wrap: wrap-reverse;
     }
     .recipe-container{
         width: 25vw;
